@@ -1,10 +1,11 @@
-package org.example;
+package com.example.demo;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class getMaterialsForHingedDoor {
-    public static List<Material> getMaterialsForHingedDoor(boolean DOOR_TYPE,
+public class getMaterialsForServiceDoor {
+
+    public static List<Material> getMaterialsForServiceDoor(boolean DOOR_TYPE,
                                                             float DOOR_THICKNESS,
                                                             float DOOR_LENGTH,
                                                             float DOOR_WIDTH,
@@ -21,16 +22,26 @@ public class getMaterialsForHingedDoor {
                                                             int DOOR_HUGE,
                                                             String DOOR_CLOSER) {
 
-        final String DOOR_NAME = "Hinged Door";
+        final String DOOR_NAME = "Service Door";
 
         List<Material> materialArrayList = new ArrayList<>();
 
         // get material which depend on DOOR_TYPE & DOOR_TYPE can be single or double
+        if (DOOR_TYPE == false) {
+            materialArrayList.add(new Material("00000000 00000", 10));   // single
+        } else {
+            materialArrayList.add(new Material("00000000 00000", 12));    // double
+        }
 
         // get material which depend on DOOR_DIRECTION and DOOR_DIRECTION is right or left
+        if (DOOR_DIRECTION == false) {
+            materialArrayList.add(new Material("00000000 00000", 0));   // right
+        } else {
+            materialArrayList.add(new Material("00000000 00000", 0));
+        }
 
         // get material which depend on frame info
-        materialArrayList.addAll(getFrameMaterialsForHingedDoor());
+        materialArrayList.addAll(getFrameMaterialsForServiceDoor());
 
         // get material which depend on porthole info
 
@@ -52,7 +63,7 @@ public class getMaterialsForHingedDoor {
     }
 
 
-    public static List<Material> getFrameMaterialsForHingedDoor() {
+    public static List<Material> getFrameMaterialsForServiceDoor() {
 
         return new ArrayList<>();
     }
