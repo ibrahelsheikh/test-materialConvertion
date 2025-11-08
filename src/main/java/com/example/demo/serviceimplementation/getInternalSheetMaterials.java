@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class getInternalSheetMaterials {
-    public List<Material> getInternalSheetMaterials(float DOOR_LENGTH,
-                                                    float DOOR_WIDTH,
-                                                    float INTERNAL_SHEET_THICKNESS,
-                                                    String INTERNAL_SHEET_TYPE,
-                                                    String INTERNAL_SHEET_COLOR_CODE) {
+    public static List<Material> getInternalSheetMaterials(float DOOR_LENGTH,
+                                                           float DOOR_WIDTH,
+                                                           int INTERNAL_SHEET_THICKNESS,
+                                                           String INTERNAL_SHEET_TYPE,
+                                                           String INTERNAL_SHEET_COLOR_CODE) {
 
         List<Material> materialArrayList = new ArrayList<>();
 

@@ -13,7 +13,7 @@ public class getMaterialsForHingedDoor {
                                                            float DOOR_FRAME_THICKNESS,
                                                            String INTERNAL_SHEET_TYPE,
                                                            String INTERNAL_SHEET_COLOR_CODE,
-                                                           String INTERNAL_SHEET_THICKNESS,
+                                                           int INTERNAL_SHEET_THICKNESS,
                                                            String EXTERNAL_SHEET_TYPE,
                                                            String EXTERNAL_SHEET_COLOR_CODE,
                                                            float EXTERNAL_SHEET_THICKNESS,
@@ -87,6 +87,11 @@ public class getMaterialsForHingedDoor {
         materialArrayList.addAll(materialConversionIdifServiceDoorFixedMaterialList.materialConversionIdifServiceDoorFixedMaterialList(DOOR_NAME, DOOR_LENGTH, DOOR_WIDTH));
 
         // get material which depend on internal sheet info
+        getInternalSheetMaterials.getInternalSheetMaterials(DOOR_LENGTH, DOOR_WIDTH ,INTERNAL_SHEET_THICKNESS,INTERNAL_SHEET_TYPE ,INTERNAL_SHEET_COLOR_CODE );
+
+        // get material which depend on EXTERNAL sheet info
+        getExternalSheetMaterials.getExternalSheetMaterials(DOOR_LENGTH, DOOR_WIDTH ,INTERNAL_SHEET_THICKNESS,INTERNAL_SHEET_TYPE ,INTERNAL_SHEET_COLOR_CODE );
+
 
         return materialArrayList;
     }
