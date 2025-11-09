@@ -18,7 +18,7 @@ public class getMaterialsForHingedDoor {
                                                            int INTERNAL_SHEET_THICKNESS,
                                                            String EXTERNAL_SHEET_TYPE,
                                                            String EXTERNAL_SHEET_COLOR_CODE,
-                                                           float EXTERNAL_SHEET_THICKNESS,
+                                                           int EXTERNAL_SHEET_THICKNESS,
                                                            doorPorthole doorPorthole,
                                                            int DOOR_HUGE,
                                                            String DOOR_CLOSER) {
@@ -92,7 +92,7 @@ public class getMaterialsForHingedDoor {
         materialArrayList.addAll(getInternalSheetMaterials.getInternalSheetMaterials(DOOR_LENGTH, DOOR_WIDTH, INTERNAL_SHEET_THICKNESS, INTERNAL_SHEET_TYPE, INTERNAL_SHEET_COLOR_CODE));
 
         // get material which depend on EXTERNAL sheet info
-        materialArrayList.addAll(getExternalSheetMaterials.getExternalSheetMaterials(DOOR_LENGTH, DOOR_WIDTH, INTERNAL_SHEET_THICKNESS, INTERNAL_SHEET_TYPE, INTERNAL_SHEET_COLOR_CODE));
+        materialArrayList.addAll(getExternalSheetMaterials.getExternalSheetMaterials(DOOR_LENGTH, DOOR_WIDTH, EXTERNAL_SHEET_THICKNESS, EXTERNAL_SHEET_TYPE, EXTERNAL_SHEET_COLOR_CODE));
 
         //  get frame data
         materialArrayList.addAll(getFrameMaterials.getFrameMaterials(DOOR_LENGTH, DOOR_WIDTH, FRAME_TYPE, FRAME_MOUNTING_TYPE, FRAME_THICKNESS));
