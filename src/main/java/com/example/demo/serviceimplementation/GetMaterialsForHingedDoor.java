@@ -1,23 +1,26 @@
 package com.example.demo.serviceimplementation;
 
+import com.example.demo.enums.DoorDirection;
+import com.example.demo.enums.DoorType;
+import com.example.demo.enums.PortholeShape;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 public class GetMaterialsForHingedDoor {
-    public static List<Material> getMaterialsForHingedDoor(String DOOR_TYPE,
+    public static List<Material> getMaterialsForHingedDoor(DoorType DOOR_TYPE,
                                                            int DOOR_THICKNESS,
                                                            float DOOR_LENGTH,
                                                            float DOOR_WIDTH,
-                                                           boolean DOOR_DIRECTION,
-                                                           String FRAME_TYPE,
-                                                           String FRAME_MOUNTING_TYPE,
+                                                           DoorDirection DOOR_DIRECTION,
+                                                           String FRAME_TYPE,  //
+                                                           String FRAME_MOUNTING_TYPE, //
                                                            int FRAME_THICKNESS,
                                                            String INTERNAL_SHEET_TYPE,
                                                            String INTERNAL_SHEET_COLOR_CODE,
                                                            int INTERNAL_SHEET_THICKNESS,
-                                                           String EXTERNAL_SHEET_TYPE,
-                                                           String EXTERNAL_SHEET_COLOR_CODE,
+                                                           String EXTERNAL_SHEET_TYPE,   //
+                                                           String EXTERNAL_SHEET_COLOR_CODE, //
                                                            int EXTERNAL_SHEET_THICKNESS,
                                                            DoorPorthole doorPorthole,
                                                            int DOOR_HUGE,
@@ -28,7 +31,7 @@ public class GetMaterialsForHingedDoor {
         List<Material> materialArrayList = new ArrayList<>();
 
         // Check if huge door number is valid
-        if (Objects.equals(DOOR_TYPE , "single")) { // single door
+        if (DOOR_TYPE == DoorType.SINGLE) { // single door
             if (DOOR_HUGE >= 2) {
                 System.out.println("Door number is invalid for single door; it should be more than 2.");
             }
@@ -47,7 +50,7 @@ public class GetMaterialsForHingedDoor {
         // get material which depend on porthole info
         if (doorPorthole.existPorthole) {
             int portHoleGasketLenghth;
-            if (doorPorthole.portholeShape.equals("Circular")) {
+            if ( doorPorthole.portholeShape == PortholeShape.CIRCULAR) {
                 // single door && porthole exist
                 portHoleGasketLenghth = 1;
 
