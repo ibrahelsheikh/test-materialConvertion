@@ -34,23 +34,23 @@ public class GetMaterialsForHingedDoor {
 
         // get material which depend on porthole info
         if (parameters.doorPorthole.existPorthole) {
-            int portHoleGasketLenghth;
+            int portHoleGasketLength;
             if ( parameters.doorPorthole.portholeShape == PortholeShape.CIRCULAR) {
                 // single door && porthole exist
-                portHoleGasketLenghth = 1;
+                portHoleGasketLength = 1;
 
             } else {
-                portHoleGasketLenghth = 2;
+                portHoleGasketLength = 2;
             }
 
             switch ((int) parameters.DOOR_THICKNESS) {
                 case 68:
-                    materialArrayList.add(new Material("11OBM200  11039", portHoleGasketLenghth));
-                    materialArrayList.add(new Material("11OBM068  11033", portHoleGasketLenghth));
+                    materialArrayList.add(new Material("11OBM200  11039", portHoleGasketLength));
+                    materialArrayList.add(new Material("11OBM068  11033", portHoleGasketLength));
                     break;
 
                 case 92:
-                    materialArrayList.add(new Material("11OBM092  11035", portHoleGasketLenghth));
+                    materialArrayList.add(new Material("11OBM092  11035", portHoleGasketLength));
                     break;
 
                 case 121:
@@ -63,7 +63,7 @@ public class GetMaterialsForHingedDoor {
         }
 
 
-        // get material which depend on DOOR_CLOSER and DOOR_CLOSER is exist or not
+        // get material which depend on DOOR_CLOSER and DOOR_CLOSER is existed or not
         if (parameters.DOOR_CLOSER.equals("Exist")) {
             materialArrayList.add(new Material("00000000 00000", 1));  // Door closer for hinged door
         }

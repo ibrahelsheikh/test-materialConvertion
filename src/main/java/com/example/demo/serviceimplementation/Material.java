@@ -2,9 +2,9 @@ package com.example.demo.serviceimplementation;
 
 public class Material {
     String code;
-    float quantity;
+    double quantity;
 
-    Material(String code, float quantity) {
+    Material(String code, double quantity) {
         this.code = code;
         this.quantity = quantity;
     }

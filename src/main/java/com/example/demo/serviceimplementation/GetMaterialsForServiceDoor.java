@@ -1,5 +1,6 @@
 package com.example.demo.serviceimplementation;
 
+import com.example.demo.enums.DoorDirection;
 import com.example.demo.enums.DoorName;
 import com.example.demo.enums.DoorType;
 
@@ -9,24 +10,7 @@ import java.util.Objects;
 
 public class GetMaterialsForServiceDoor {
 
-    public static List<Material> getMaterialsForServiceDoor(Parameters parameters,
-                                                            String DOOR_TYPE,
-                                                            float DOOR_THICKNESS,
-                                                            float DOOR_LENGTH,
-                                                            float DOOR_WIDTH,
-                                                            String DOOR_DIRECTION,
-                                                            String FRAME_TYPE,
-                                                            String FRAME_MOUNTING_TYPE,
-                                                            int FRAME_THICKNESS,
-                                                            String INTERNAL_SHEET_TYPE,
-                                                            String INTERNAL_SHEET_COLOR_CODE,
-                                                            int INTERNAL_SHEET_THICKNESS,
-                                                            String EXTERNAL_SHEET_TYPE,
-                                                            String EXTERNAL_SHEET_COLOR_CODE,
-                                                            int EXTERNAL_SHEET_THICKNESS,
-                                                            DoorPorthole doorPorthole,
-                                                            int DOOR_HUGE,
-                                                            String DOOR_CLOSER) {
+    public static List<Material> getMaterialsForServiceDoor(Parameters parameters) {
 
         parameters.DOOR_NAME = DoorName.SERVICE_DOOR;
 
@@ -40,11 +24,7 @@ public class GetMaterialsForServiceDoor {
         }
 
         // get material which depend on DOOR_DIRECTION and DOOR_DIRECTION is right or left
-        if (Objects.equals(DOOR_DIRECTION, "right")) {
-            materialArrayList.add(new Material("00000000 00000", 0));   // right
-        } else {
-            materialArrayList.add(new Material("00000000 00000", 0));
-        }
+        materialArrayList.add(new Material("00000000 00000", 0));   // right
 
         // get material which depend on porthole info
 
@@ -55,7 +35,7 @@ public class GetMaterialsForServiceDoor {
 
 
         // get material which depend on DOOR_HUGE and DOOR_HUGE is number
-        materialArrayList.add(new Material("14INO002 P0002", DOOR_HUGE));
+        materialArrayList.add(new Material("14INO002 P0002", parameters.DOOR_HUGE));
 
         // get material which fixed for any options
 

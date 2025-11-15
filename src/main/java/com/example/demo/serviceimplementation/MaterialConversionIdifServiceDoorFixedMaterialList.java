@@ -13,7 +13,7 @@ public class MaterialConversionIdifServiceDoorFixedMaterialList {
 
         List<Material> materialArrayList = new ArrayList<>();
 
-        float materialConversionCalculateMaterialHisCode_11PLT003_00000 = MaterialConversionCalculateMaterialQuantityForServiceDoor.materialConversionCalculateMaterialHisCode_11PLT003_00000(parameters.DOOR_LENGTH, parameters.DOOR_WIDTH);
+        double materialConversionCalculateMaterialHisCode_11PLT003_00000 = MaterialConversionCalculateMaterialQuantityForServiceDoor.materialConversionCalculateMaterialHisCode_11PLT003_00000(parameters.DOOR_LENGTH, parameters.DOOR_WIDTH);
 
         switch (parameters.DOOR_NAME) {
             case SERVICE_DOOR:
