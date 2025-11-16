@@ -35,6 +35,7 @@ public class Parameters {
     boolean PORTHOLE_IS_EXIST;
     PortholeShape PORTHOLE_SHAPE;
 
+    boolean DOOR_HUGE_IS_EXIST;
     double DOOR_HUGE;
     HugeType HUGE_TYPE;
 
