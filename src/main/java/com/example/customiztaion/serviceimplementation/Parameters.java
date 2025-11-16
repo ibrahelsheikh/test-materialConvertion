@@ -50,7 +50,7 @@ public class Parameters {
 
     StopperType STOPPER_TYPE;
 
-    int TRIAS_NUMBER;
+    int LATCH_NUMBER;
 
 
 
