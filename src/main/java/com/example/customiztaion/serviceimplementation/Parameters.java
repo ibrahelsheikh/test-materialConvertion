@@ -9,7 +9,7 @@ public class Parameters {
     double DOOR_LENGTH;
     double DOOR_WIDTH;
 
-    int DOOR_QUANTITY;                                   // number of doors
+    int DOOR_QUANTITY;                                      // number of doors
     double PRICE;
 
     DoorDirection DOOR_DIRECTION;                           // right or left
@@ -40,7 +40,7 @@ public class Parameters {
 
     boolean DOOR_CLOSER_EXIST;
 
-    AccessoryType ACCESSORY_TYPE;                         // IDIF , MTH
+    AccessoryType ACCESSORY_TYPE;                             // IDIF , MTH
 
     boolean BUMPER_IS_EXIST;
     int BUMPER_NUMBER;
