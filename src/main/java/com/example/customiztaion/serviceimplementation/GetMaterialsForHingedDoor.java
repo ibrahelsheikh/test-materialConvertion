@@ -63,7 +63,7 @@ public class GetMaterialsForHingedDoor {
 
 
         // get material which depend on DOOR_CLOSER and DOOR_CLOSER is existed or not
-        if (parameters.DOOR_CLOSER_EXIST== true) {
+        if (parameters.DOOR_CLOSER_EXIST) {
             materialArrayList.add(new Material("00000000 00000", 1));  // Door closer for hinged door
         }
 

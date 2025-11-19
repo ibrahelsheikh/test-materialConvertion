@@ -20,7 +20,7 @@ public class Parameters {
     FrameMountingType FRAME_MOUNTING_TYPE;                  // Full ,
     double FRAME_THICKNESS;
     AccessoryType IS_FRAME_MTH_OR_IDIF;
-    int FRAME_NUMBER_OF_ROBS;
+    int FRAME_NUMBER_OF_EDGES;
 
     SheetType INTERNAL_SHEET_TYPE;
     String INTERNAL_SHEET_COLOR_CODE;
