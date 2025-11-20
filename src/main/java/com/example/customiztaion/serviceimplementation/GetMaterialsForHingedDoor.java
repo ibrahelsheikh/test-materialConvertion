@@ -16,11 +16,11 @@ public class GetMaterialsForHingedDoor {
 
         // Check if huge door number is valid
         if (parameters.DOOR_TYPE == DoorType.SINGLE) { // single door
-            if (parameters.DOOR_HUGE >= 2) {
+            if (parameters.DOOR_HUGE < 2) {
                 System.out.println("Door number is invalid for single door; it should be more than 2.");
             }
-        } else { // double door
-            if (parameters.DOOR_HUGE >= 4) {
+        } else if (parameters.DOOR_TYPE == DoorType.DOUBLE) { // double door
+            if (parameters.DOOR_HUGE < 4) {
                 System.out.println("Door number is invalid for double door; it should be more than 4.");
             }
         }
