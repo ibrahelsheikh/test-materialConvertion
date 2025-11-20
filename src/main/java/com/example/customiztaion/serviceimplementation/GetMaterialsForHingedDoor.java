@@ -81,4 +81,40 @@ public class GetMaterialsForHingedDoor {
         return materialArrayList;
     }
 
+
+    //TODO: need equations for Aluminium profile materials
+
+    public static List<Material> getAluminumProfileMaterials(Parameters parameters) {
+
+        List<Material> materialArrayList = new ArrayList<>();
+
+        switch ((int) parameters.DOOR_THICKNESS) {
+            case 68:
+                double aluminumLength = 0;
+                aluminumLength = ((parameters.DOOR_LENGTH + 68*2) * 2) + ((parameters.DOOR_WIDTH + 68*2) * 2);
+                materialArrayList.add(new Material("55952", 1));
+                break;
+
+            case 92:
+                double aluminumLength92 = 0;
+                aluminumLength92 = ((parameters.DOOR_LENGTH + 92*2) * 2) + ((parameters.DOOR_WIDTH + 92*2) * 2);
+                materialArrayList.add(new Material("55962", 1));
+                break;
+
+            case 121:
+                double aluminumLength121 = 0;
+                aluminumLength121 = ((parameters.DOOR_LENGTH + 121*2) * 2) + ((parameters.DOOR_WIDTH + 121*2) * 2);
+                materialArrayList.add(new Material("55963", 1));
+                break;
+
+            case 151:
+                double aluminumLength151 = 0;
+                aluminumLength151 = ((parameters.DOOR_LENGTH + 151*2) * 2) + ((parameters.DOOR_WIDTH + 151*2) * 2);
+                materialArrayList.add(new Material("55972", 1));
+                break;
+        }
+
+        return materialArrayList;
+    }
+
 }
