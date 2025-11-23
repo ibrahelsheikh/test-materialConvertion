@@ -1,7 +1,6 @@
 package com.example.customiztaion.serviceimplementation;
 
 import com.example.customiztaion.enums.*;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -37,7 +36,7 @@ public class Parameters {
     PortholeShape PORTHOLE_SHAPE;
 
     double DOOR_HUGE;
-    HugeType HUGE_TYPE;
+    HingeType HINGE_TYPE;
 
     boolean DOOR_CLOSER_EXIST;
 
