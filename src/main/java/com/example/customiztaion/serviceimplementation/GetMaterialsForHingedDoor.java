@@ -10,11 +10,17 @@ import java.util.List;
 public class GetMaterialsForHingedDoor {
     public static List<Material> getMaterialsForHingedDoor(Parameters parameters) {
 
+        // set door name
         parameters.DOOR_NAME = DoorName.HINGED_DOOR;
 
         List<Material> materialArrayList = new ArrayList<>();
 
         // Check if huge door number is valid
+
+
+
+
+
         if (parameters.DOOR_TYPE == DoorType.SINGLE) { // single door
             if (parameters.DOOR_HUGE < 2) {
                 System.out.println("Door number is invalid for single door; it should be more than 2.");
@@ -32,6 +38,9 @@ public class GetMaterialsForHingedDoor {
 
 
         // get material which depend on porthole info
+
+
+
         if (parameters.PORTHOLE_IS_EXIST) {
             int portHoleGasketLength;
             if ( parameters.PORTHOLE_SHAPE == PortholeShape.CIRCULAR) {

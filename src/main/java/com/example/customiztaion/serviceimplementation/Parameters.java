@@ -1,7 +1,10 @@
 package com.example.customiztaion.serviceimplementation;
 
 import com.example.customiztaion.enums.*;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import org.springframework.stereotype.Component;
 
+@Component
 public class Parameters {
     DoorName DOOR_NAME;                                     // hinged door, sliding door, SWING DOOR and service door
     DoorType DOOR_TYPE;                                     // single or double
@@ -50,6 +53,7 @@ public class Parameters {
 
     int LATCH_NUMBER;
 
+    BottomGuide BOTTOM_GUIDE;
 
 
 }

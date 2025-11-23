@@ -1,6 +1,5 @@
 package com.example.customiztaion.serviceimplementation;
 
-import com.example.customiztaion.enums.AccessoryType;
 import com.example.customiztaion.enums.DoorName;
 import com.example.customiztaion.enums.FrameMountingType;
 import com.example.customiztaion.enums.FrameType;
@@ -39,126 +38,83 @@ public class GetSheetsFrameMaterials {
     private static List<Material> getFrameMaterials(Parameters parameters) {
         List<Material> materialArrayList = new ArrayList<>();
 
+        // Hinged Door - PVC - Surface Mounted
+        if (parameters.DOOR_NAME == DoorName.HINGED_DOOR &&
+                parameters.FRAME_TYPE == FrameType.PVC &&
+                parameters.FRAME_MOUNTING_TYPE == FrameMountingType.SURFACE_MOUNTED) {
 
-        if (parameters.FRAME_TYPE == FrameType.PVC) {
+            if (parameters.FRAME_NUMBER_OF_EDGES == 3) {
 
-            if (parameters.FRAME_MOUNTING_TYPE == FrameMountingType.SURFACE_MOUNTED) {
+                double quantity = GetThreeEdgesFrameQuantity(parameters, 14);
 
-                if (parameters.DOOR_NAME == DoorName.HINGED_DOOR || parameters.DOOR_NAME == DoorName.SLIDING_DOOR) {
+                materialArrayList.add(new Material("SP027", quantity));
 
-                    if (parameters.FRAME_NUMBER_OF_EDGES == 3) {
+            } else if (parameters.FRAME_NUMBER_OF_EDGES == 4) {
 
-                        double Quantity = 0;
+                double quantity = GetFourEdgesFrameQuantity(parameters, 14);
 
-                        Quantity =
-                                ((parameters.DOOR_LENGTH + 14) * 2)
-                                        + (parameters.DOOR_WIDTH + 28);
-
-                        materialArrayList.add(new Material("SP027", Quantity));
-
-                    }
-
-                    if (parameters.FRAME_NUMBER_OF_EDGES == 4) {
-                        double Quantity = 0;
-
-                        Quantity =
-                                ((parameters.DOOR_LENGTH + 28) * 2)
-                                        + ((parameters.DOOR_WIDTH + 28) * 2);
-
-                        materialArrayList.add(new Material("SP027", Quantity));
-                    }
-
-                }
-
+                materialArrayList.add(new Material("SP027", quantity));
             }
-
-
-            if (parameters.FRAME_MOUNTING_TYPE == FrameMountingType.FULL) {
-
-                if (parameters.DOOR_NAME == DoorName.HINGED_DOOR) {
-
-                    if (parameters.FRAME_THICKNESS == 10) {
-
-                        if (parameters.IS_FRAME_MTH_OR_IDIF == AccessoryType.IDIF) {
-
-                            if (parameters.FRAME_NUMBER_OF_EDGES == 3) {
-                                double Quantity = 0;
-
-                                Quantity =
-                                        ((parameters.DOOR_LENGTH + 10) * 2)
-                                                + (parameters.DOOR_WIDTH + 20);
-
-                                materialArrayList.add(new Material("SP043", Quantity));
-
-                                Quantity =
-                                        ((parameters.DOOR_LENGTH + 7) * 2)
-                                                + (parameters.DOOR_WIDTH + 14);
-
-                                materialArrayList.add(new Material("SP024", Quantity));
-
-                            }
-
-                            if (parameters.FRAME_NUMBER_OF_EDGES == 4) {
-                                double Quantity = 0;
-
-                                // Front frame SP043
-                                Quantity = 2 * (parameters.DOOR_LENGTH + 20) + 2 * (parameters.DOOR_WIDTH + 20);
-                                materialArrayList.add(new Material("SP043", Quantity));
-
-                                // Back frame SP024
-                                Quantity = 2 * (parameters.DOOR_LENGTH + 14) + 2 * (parameters.DOOR_WIDTH + 14);
-                                materialArrayList.add(new Material("SP024", Quantity));
-                            }
-
-                        }
-
-                        if (parameters.IS_FRAME_MTH_OR_IDIF == AccessoryType.MTH) {
-
-// For 3-sided frame
-                            if (parameters.FRAME_NUMBER_OF_EDGES == 3) {
-
-                                // Front section
-                                double quantityFront = (parameters.DOOR_LENGTH + 10) * 2 + parameters.DOOR_WIDTH + 20;
-                                materialArrayList.add(new Material("SP018", quantityFront));
-
-                                // Back section
-                                double quantityBack = (parameters.DOOR_LENGTH + 7) * 2 + parameters.DOOR_WIDTH + 14;
-                                materialArrayList.add(new Material("SP024", quantityBack));
-
-                                // Middle section
-                                double quantityMiddle = (parameters.DOOR_LENGTH + 4) * 2 + parameters.DOOR_WIDTH + 8;
-                                materialArrayList.add(new Material("SP019", quantityMiddle));
-                            }
-
-// For 4-sided frame
-                            if (parameters.FRAME_NUMBER_OF_EDGES == 4) {
-
-                                // Front section
-                                double quantityFront = (parameters.DOOR_LENGTH + 20) * 2 + (parameters.DOOR_WIDTH + 20) * 2;
-                                materialArrayList.add(new Material("SP018", quantityFront));
-
-                                // Back section
-                                double quantityBack = (parameters.DOOR_LENGTH + 14) * 2 + (parameters.DOOR_WIDTH + 14) * 2;
-                                materialArrayList.add(new Material("SP024", quantityBack));
-
-                                // Middle section
-                                double quantityMiddle = (parameters.DOOR_LENGTH + 8) * 2 + (parameters.DOOR_WIDTH + 8) * 2;
-                                materialArrayList.add(new Material("SP019", quantityMiddle));
-                            }
-
-
-                        }
-
-
-                    }
-                }
-
-            }
-
-
         }
 
+        // Sliding Door - PVC - Surface Mounted
+        if (parameters.DOOR_NAME == DoorName.SLIDING_DOOR &&
+                parameters.FRAME_TYPE == FrameType.PVC &&
+                parameters.FRAME_MOUNTING_TYPE == FrameMountingType.SURFACE_MOUNTED) {
+
+            if (parameters.FRAME_NUMBER_OF_EDGES == 3) {
+
+                double quantity = GetThreeEdgesFrameQuantity(parameters, 14);
+
+                materialArrayList.add(new Material("SP027", quantity));
+
+            } else if (parameters.FRAME_NUMBER_OF_EDGES == 4) {
+
+                double quantity = GetFourEdgesFrameQuantity(parameters, 14);
+
+                materialArrayList.add(new Material("SP027", quantity));
+
+            }
+        }
+
+        // Sliding Door - PVC - Full
+        if (parameters.DOOR_NAME == DoorName.SLIDING_DOOR &&
+                parameters.FRAME_TYPE == FrameType.PVC &&
+                parameters.FRAME_MOUNTING_TYPE == FrameMountingType.FULL &&
+                parameters.FRAME_THICKNESS == 10) {
+
+            if (parameters.FRAME_NUMBER_OF_EDGES == 3) {
+
+                double front = GetThreeEdgesFrameQuantity(parameters, 14);
+                double back = GetThreeEdgesFrameQuantity(parameters, 14);
+                double middle = GetThreeEdgesFrameQuantity(parameters, 14);
+
+                materialArrayList.add(new Material("", front));
+                materialArrayList.add(new Material("", back));
+                materialArrayList.add(new Material("", middle));
+
+            } else if (parameters.FRAME_NUMBER_OF_EDGES == 4) {
+
+                double quantity = GetFourEdgesFrameQuantity(parameters, 14);
+                materialArrayList.add(new Material("SP026", quantity));
+            }
+        }
 
         return materialArrayList;
     }
+
+
+    public static double GetThreeEdgesFrameQuantity(Parameters parameters, double offset) {
+
+        return ((parameters.DOOR_LENGTH + offset) * 2)
+                + (parameters.DOOR_WIDTH + offset * 2);
+    }
+
+    public static double GetFourEdgesFrameQuantity(Parameters parameters, double offset) {
+
+        return ((parameters.DOOR_LENGTH + offset * 2) * 2)
+                + ((parameters.DOOR_WIDTH + offset * 2) * 2);
+    }
+
+
 }
