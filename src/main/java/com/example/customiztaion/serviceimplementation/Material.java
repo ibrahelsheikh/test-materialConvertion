@@ -4,7 +4,7 @@ public class Material {
     String code;
     double quantity;
 
-    Material(String code, double quantity) {
+    public Material(String code, double quantity) {
         this.code = code;
         this.quantity = quantity;
     }

@@ -1,44 +1,21 @@
-package com.example.customiztaion.serviceimplementation;
+package com.example.customiztaion.serviceimplementation.framematerials;
 
-import com.example.customiztaion.enums.AccessoryType;
 import com.example.customiztaion.enums.DoorName;
 import com.example.customiztaion.enums.FrameMountingType;
 import com.example.customiztaion.enums.FrameType;
+import com.example.customiztaion.serviceimplementation.Material;
+import com.example.customiztaion.serviceimplementation.Parameters;
 
-import java.util.ArrayList;
 import java.util.List;
 
-public class GetSheetsFrameMaterials {
+import static com.example.customiztaion.serviceimplementation.GetSheetsFrameMaterials.GetFourEdgesFrameQuantity;
+import static com.example.customiztaion.serviceimplementation.GetSheetsFrameMaterials.GetThreeEdgesFrameQuantity;
 
-    public static List<Material> getSheetsFrameMaterials(Parameters parameters) {
+public class GetPvcFrameMaterials {
 
-        List<Material> materialArrayList = new ArrayList<>();
+    public List<Material> getPvcFrameMaterials(Parameters parameters) {
 
-        materialArrayList.addAll(getInternalSheetMaterials(parameters));
-        materialArrayList.addAll(getExternalSheetMaterials(parameters));
-        materialArrayList.addAll(getFrameMaterials(parameters));
-
-        return materialArrayList;
-
-    }
-
-
-    private static List<Material> getInternalSheetMaterials(Parameters parameters) {
-        List<Material> materialArrayList = new ArrayList<>();
-
-        return materialArrayList;
-    }
-
-    private static List<Material> getExternalSheetMaterials(Parameters parameters) {
-        List<Material> materialArrayList = new ArrayList<>();
-
-        return materialArrayList;
-    }
-
-
-    private static List<Material> getFrameMaterials(Parameters parameters) {
-        List<Material> materialArrayList = new ArrayList<>();
-
+        List<Material> materialArrayList = new java.util.ArrayList<>();
 
 
         // Hinged Door - PVC - Surface Mounted
@@ -274,7 +251,7 @@ public class GetSheetsFrameMaterials {
 
 
 
-    // Sliding Door - PVC - Surface Mounted
+        // Sliding Door - PVC - Surface Mounted
         if (parameters.DOOR_NAME == DoorName.SLIDING_DOOR &&
                 parameters.FRAME_TYPE == FrameType.PVC &&
                 parameters.FRAME_MOUNTING_TYPE == FrameMountingType.SURFACE_MOUNTED) {
@@ -390,20 +367,9 @@ public class GetSheetsFrameMaterials {
                 }
             }
         }
+
+
         return materialArrayList;
-    }
-
-
-    public static double GetThreeEdgesFrameQuantity(Parameters parameters, double offset) {
-
-        return ((parameters.DOOR_LENGTH + offset) * 2)
-                + (parameters.DOOR_WIDTH + offset * 2);
-    }
-
-    public static double GetFourEdgesFrameQuantity(Parameters parameters, double offset) {
-
-        return ((parameters.DOOR_LENGTH + offset * 2) * 2)
-                + ((parameters.DOOR_WIDTH + offset * 2) * 2);
     }
 
 

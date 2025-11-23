@@ -5,54 +5,54 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Parameters {
-    DoorName DOOR_NAME;                                     // hinged door, sliding door, SWING DOOR and service door
-    DoorType DOOR_TYPE;                                     // single or double
-    double DOOR_THICKNESS;
-    double DOOR_LENGTH;
-    double DOOR_WIDTH;
+    public DoorName DOOR_NAME;                                     // hinged door, sliding door, SWING DOOR and service door
+    public DoorType DOOR_TYPE;                                     // single or double
+    public double DOOR_THICKNESS;
+    public double DOOR_LENGTH;
+    public double DOOR_WIDTH;
 
-    int DOOR_QUANTITY;                                      // number of doors
-    double PRICE;
+    public int DOOR_QUANTITY;                                      // number of doors
+    public double PRICE;
 
-    DoorDirection DOOR_DIRECTION;                           // right or left
+    public DoorDirection DOOR_DIRECTION;                           // right or left
 
-    TemperatureRange TEMPERATURE_RANGE;                     // COOLING, FREEZING
+    public TemperatureRange TEMPERATURE_RANGE;                     // COOLING, FREEZING
 
-    FrameType FRAME_TYPE;                                   // stainless steel 304, stainless steel 316, aluminum, galvanized steel
-    FrameMountingType FRAME_MOUNTING_TYPE;                  // Full ,
-    double FRAME_THICKNESS;
-    AccessoryType IS_FRAME_MTH_OR_IDIF;
-    int FRAME_NUMBER_OF_EDGES;
+    public FrameType FRAME_TYPE;                                   // stainless steel 304, stainless steel 316, aluminum, galvanized steel
+    public FrameMountingType FRAME_MOUNTING_TYPE;                  // Full ,
+    public double FRAME_THICKNESS;
+    public AccessoryType IS_FRAME_MTH_OR_IDIF;
+    public int FRAME_NUMBER_OF_EDGES;
 
-    SheetType INTERNAL_SHEET_TYPE;
-    String INTERNAL_SHEET_COLOR_CODE;
-    double INTERNAL_SHEET_THICKNESS;
+    public SheetType INTERNAL_SHEET_TYPE;
+    public String INTERNAL_SHEET_COLOR_CODE;
+    public double INTERNAL_SHEET_THICKNESS;
 
-    SheetType EXTERNAL_SHEET_TYPE;
-    String EXTERNAL_SHEET_COLOR_CODE;
-    double EXTERNAL_SHEET_THICKNESS;
+    public SheetType EXTERNAL_SHEET_TYPE;
+    public String EXTERNAL_SHEET_COLOR_CODE;
+    public double EXTERNAL_SHEET_THICKNESS;
 
-    boolean PORTHOLE_IS_EXIST;
-    PortholeShape PORTHOLE_SHAPE;
+    public boolean PORTHOLE_IS_EXIST;
+    public PortholeShape PORTHOLE_SHAPE;
 
-    double DOOR_HUGE;
-    HingeType HINGE_TYPE;
+    public double DOOR_HUGE;
+    public HingeType HINGE_TYPE;
 
-    boolean DOOR_CLOSER_EXIST;
+    public boolean DOOR_CLOSER_EXIST;
 
-    AccessoryType ACCESSORY_TYPE;                             // IDIF , MTH
+    public AccessoryType ACCESSORY_TYPE;                             // IDIF , MTH
 
-    boolean BUMPER_IS_EXIST;
-    int BUMPER_NUMBER;
-    double BUMPER_SIZE;
+    public boolean BUMPER_IS_EXIST;
+    public int BUMPER_NUMBER;
+    public double BUMPER_SIZE;
 
-    SlidingWheelType SLIDING_WHEEL_TYPE;
+    public SlidingWheelType SLIDING_WHEEL_TYPE;
 
-    StopperType STOPPER_TYPE;
+    public StopperType STOPPER_TYPE;
 
-    int LATCH_NUMBER;
+    public int LATCH_NUMBER;
 
-    BottomGuide BOTTOM_GUIDE;
+    public BottomGuide BOTTOM_GUIDE;
 
 
 }
