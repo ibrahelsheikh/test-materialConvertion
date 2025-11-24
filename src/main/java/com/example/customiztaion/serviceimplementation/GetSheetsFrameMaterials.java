@@ -188,7 +188,7 @@ public class GetSheetsFrameMaterials {
                         if (parameters.FRAME_THICKNESS> 10) {
                             int multiplier = 0;
 
-                            if (parameters.FRAME_THICKNESS == 11 |  parameters.FRAME_THICKNESS == 12) {
+                            if (parameters.FRAME_THICKNESS == 11 ) {
                                 multiplier = 1;
 
                                 materialArrayList.add(new Material("SP012", middle));
@@ -233,7 +233,7 @@ public class GetSheetsFrameMaterials {
                         if (parameters.FRAME_THICKNESS> 10) {
                             int multiplier = 0;
 
-                            if (parameters.FRAME_THICKNESS == 11 |  parameters.FRAME_THICKNESS == 12) {
+                            if (parameters.FRAME_THICKNESS == 11 ) {
                                 multiplier = 1;
 
                                 materialArrayList.add(new Material("SP012", middle));
