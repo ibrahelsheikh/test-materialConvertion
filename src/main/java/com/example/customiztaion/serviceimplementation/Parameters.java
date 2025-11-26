@@ -54,5 +54,7 @@ public class Parameters {
 
     public BottomGuide BOTTOM_GUIDE;
 
+    public boolean isSpiralCableExist;
+
 
 }
