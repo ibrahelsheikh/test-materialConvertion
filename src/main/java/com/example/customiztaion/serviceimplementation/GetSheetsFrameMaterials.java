@@ -1,9 +1,6 @@
 package com.example.customiztaion.serviceimplementation;
 
-import com.example.customiztaion.enums.AccessoryType;
-import com.example.customiztaion.enums.DoorName;
-import com.example.customiztaion.enums.FrameMountingType;
-import com.example.customiztaion.enums.FrameType;
+import com.example.customiztaion.enums.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +19,6 @@ public class GetSheetsFrameMaterials {
 
     }
 
-
     private static List<Material> getInternalSheetMaterials(Parameters parameters) {
         List<Material> materialArrayList = new ArrayList<>();
 
@@ -34,7 +30,6 @@ public class GetSheetsFrameMaterials {
 
         return materialArrayList;
     }
-
 
     private static List<Material> getFrameMaterials(Parameters parameters) {
         List<Material> materialArrayList = new ArrayList<>();
@@ -393,7 +388,6 @@ public class GetSheetsFrameMaterials {
         return materialArrayList;
     }
 
-
     public static double GetThreeEdgesFrameQuantity(Parameters parameters, double offset) {
 
         return ((parameters.DOOR_LENGTH + offset) * 2)
@@ -405,6 +399,5 @@ public class GetSheetsFrameMaterials {
         return ((parameters.DOOR_LENGTH + offset * 2) * 2)
                 + ((parameters.DOOR_WIDTH + offset * 2) * 2);
     }
-
 
 }
